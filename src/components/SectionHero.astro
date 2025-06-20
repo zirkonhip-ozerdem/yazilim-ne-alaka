@@ -1,0 +1,75 @@
+---
+// Hero bölümü: girişteki grid yapı
+---
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    
+  }
+
+  .card {
+    background: white;
+    border-radius: 1.5rem;
+    min-height: 200px;
+  }
+
+  .highlight-card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    min-height: 200px;
+  }
+
+  .card-frontend {
+    background-color: #E885AD;
+  }
+
+  .card-backend {
+    background-color: #8DD0F4;
+  }
+
+  .card-server {
+    background-color: #F0A7BE;
+  }
+
+  .arrow {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="hero-grid">
+  <!-- Sol 2 sütun - boş veya ileride dolacak -->
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card highlight-card card-frontend">
+    <div>Kullanıcıyla İlk Temas:<br /><strong>FRONTEND</strong></div>
+    <div class="arrow">→</div>
+  </div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card highlight-card card-backend">
+    <div>Hafızalarımız:<br />Düşünen, Hatırlayan Sistem<br /><strong>BACKEND</strong></div>
+    <div class="arrow">→</div>
+  </div>
+  <div class="card highlight-card card-server">
+    <div>Sistemin Kalbi:<br /><strong>Sunucu Tarafı</strong></div>
+    <div class="arrow">→</div>
+  </div>
+</section>
