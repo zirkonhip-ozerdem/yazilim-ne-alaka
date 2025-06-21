@@ -16,7 +16,24 @@
     border-radius: 1.5rem;
     min-height: 200px;
   }
-
+  .cardfrontend {
+    background: white;
+    border-radius: 1.5rem;
+    min-height: 50px;
+    min-width: 300px;
+  }
+  .cardfrontend2 {
+    background: #f974a6;
+    border-radius: 1.5rem;
+    min-height: 150px;
+    min-width: 330px;
+  }
+   .cardbackend {
+    background: white;
+    border-radius: 1.5rem;
+    min-height: 50px;
+    min-width: 200px;
+  }
   .highlight-card {
     color: white;
     display: flex;
@@ -46,7 +63,9 @@
     font-size: 1.5rem;
     margin-top: auto;
   }
-
+  .magazinyazi{
+    color: #f974a6;
+  }
   @media (max-width: 768px) {
     .hero-grid {
       grid-template-columns: 1fr;
@@ -56,20 +75,41 @@
 
 <section class="hero-grid">
   <!-- Sol 2 sütun - boş veya ileride dolacak -->
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card highlight-card card-frontend">
-    <div>Kullanıcıyla İlk Temas:<br /><strong>FRONTEND</strong></div>
-    <div class="arrow">→</div>
+   
+  <div class="cardfrontend2 highlight-card">
+      <div>Kullanıcıyla İlk Temas:<br /><strong>FRONTEND</strong></div>
+      <img src="public/svg/frontend.svg" alt="frontend"   />
+     <div class="arrow"><a href="/frontend-harita" class="arroww"> →</a></div>
   </div>
-  <div class="card"></div>
-  <div class="card"></div>
+
+  <div class="cardfrontend highlight-card">
+     <div><strong class="magazinyazi">Gıybet varsa biz de varız:</strong><br /><strong class="magazinyazi"> YAZILIMIN MAGAZİNSEL KÖŞESİ BURADA.</strong></div>
+      <img src="public/svg/yazilim-magazini.svg" alt="frontend"   />
+     <div class="arrow"><a href="/yazilim-magazini" class="arrowww"> →</a></div>
+  </div>
+
+  <div class="cardbackend highlight-card">
+      <div><strong class="magazinyazi">Yazılımda Bazen Plan Yaparsın:</strong><br /><strong class="magazinyazi"> BAZEN GEÇMİŞE DÖNMEK İSTERSİN. <br />Git ve GitHub Kültürü</strong></div>
+      <img src="public/svg/yazilim-github.svg" alt="github"   />
+     <div class="arrow"><a href="/yazilim-github" class="arrowww"> →</a></div>
+  </div>
+
+  <div class="cardbackend highlight-card">
+     <div><strong class="magazinyazi">Yazılım fikrini hayata geçirmek:</strong><br /><strong class="magazinyazi"> HER ZAMAN PLANLA BAŞLAR.<br />Proje Yönetimi</strong></div>
+      <img src="public/svg/yazilim-proje-yonetimi.svg" alt="projeyonetimi"   />
+     <div class="arrow"><a href="/frontend-harita" class="arrowww"> →</a></div>
+  </div>
+
   <div class="card highlight-card card-backend">
-    <div>Hafızalarımız:<br />Düşünen, Hatırlayan Sistem<br /><strong>BACKEND</strong></div>
-    <div class="arrow">→</div>
+    <div>Hatırlayan Sistem:<br /><strong>BACKEND</strong></div>
+    <img src="public/svg/backend.svg" alt="backend"  />
+    <div class="arrow"><a href="/backend-harita" class="arroww"> →</a></div>
   </div>
+
   <div class="card highlight-card card-server">
-    <div>Sistemin Kalbi:<br /><strong>Sunucu Tarafı</strong></div>
-    <div class="arrow">→</div>
+    <div>Sistemin Kalbi:<br /><strong>SUNUCU TARAFI</strong></div>
+    <img src="public/svg/sunucu.svg" alt="sunucu"  />
+    <div class="arrow"><a href="/sunucu-harita" class="arroww"> →</a></div>
   </div>
+ 
 </section>
