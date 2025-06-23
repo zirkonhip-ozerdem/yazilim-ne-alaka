@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+    .harita-container {
+      display: flex;
+      background-color: #f254c3;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .sidebar-title {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 3.5rem;
+      font-family: 'Fira Mono', monospace;
+      font-weight: bold;
+      color: #fff34a;
+      letter-spacing: 0.15rem;
+      flex: 0 0 140px;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .grid-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+   
+      width: 100%;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-height: 340px;
+      transition: transform 0.2s ease;
+    }
+    
+    .card h3 {
+        margin-top: 0.5rem;
+        font-weight: bold;
+        font-size: 1.3rem;            
+        color: #f254c3;                 
+        font-family: 'Fira Mono', monospace;   
+        text-align: center;
+      }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+ 
+    .plus {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      background-color: #f254c3;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card img {
+      width: 50%;
+      height: auto;
+      
+    }
+
+    @media (max-width: 1024px) {
+      .grid-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sidebar-title {
+        font-size: 2.5rem;
+        flex: 0 0 100px;
+      }
+      
+    }
+
+    @media (max-width: 640px) {
+      .harita-container {
+        flex-direction: column;
+      }
+
+      .sidebar-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .grid-content {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        width: 100%;
+      }
+     
+
+    }
+  </style>
+
+  <section class="harita-container">
+    <div class="sidebar-title">Frontend Haritası</div>
+
+    <div class="grid-content">
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/react-icon.png" alt="React" />
+        <h3>React</h3>
+        <h3>(Boş Daire)</h3>
+        <h2>Tipi: Kütüphane</h2>
+      </div>
+
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/vue-icon.png" alt="Vue" />
+        <h3>Vue</h3>
+        <h3>(Mobilyalı Daire)</h3>
+        <h2>Tipi: Framework</h2>
+      </div>
+
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/flutter-icon.png" alt="Flutter" />
+        <h3>Flutter</h3>
+        <h3>(Prefabrik Villa)</h3>
+        <h2>Tipi: UI SDK</h2>
+      </div>
+
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/react-icon.png" alt="React Native" />
+        <h3>React-Native</h3>
+        <h3>(Karavan)</h3>
+        <h2>Tipi: Mobil Framework</h2>
+      </div>
+
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/svelte-icon.png" alt="Svelte" />
+        <h3>Svelte</h3>
+        <h3>(Tiny House)</h3>
+        <h2>Tipi: Framework</h2>
+      </div>
+
+      <div class="card">
+        <div class="plus">+</div>
+        <img src="public/images/astro-icon.png" alt="Astro" />
+        <h3>Astro</h3>
+        <h3>(Bungalov)</h3>
+        <h2>Tipi: Meta-Framework</h2>
+      </div>
+    </div>
+  </section>
+</Layout>
