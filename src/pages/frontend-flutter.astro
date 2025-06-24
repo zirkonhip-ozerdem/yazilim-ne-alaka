@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap');
+
+    .page {
+      background: #736ff4;
+      background-image: url('/images/bg-texture.png'); /* sen buraya dokulu arka plan koyabilirsin */
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      padding: 2rem;
+      color: white;
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    .header-pill {
+      background: #ff4ed8;
+      color: yellow;
+      font-weight: bold;
+      font-size: 1.6rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      display: inline-block;
+      transform: rotate(-5deg);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .tech-badge {
+      background: white;
+      color: #2a2afc;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .tech-badge img {
+      width: 28px;
+      height: auto;
+    }
+
+    .content {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      max-width: 700px;
+    }
+
+    @media (max-width: 768px) {
+      .header-pill {
+        font-size: 1.3rem;
+      }
+
+      .tech-badge {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .content {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+      }
+    }
+  </style>
+
+  <section class="page">
+    <div class="header-pill">FRONTEND HARİTASI</div>
+
+    <div class="tech-badge">
+        Flutter
+    </div>
+
+    <div class="content">
+      Bir aktiviteye gitmek için haritadaki bir destinasyona tıklayın. Daha fazlasını yapmak isterseniz buraya geri gelin. İyi eğlenceler!<br /><br />
+      Bir aktiviteye gitmek için haritadaki bir destinasyona tıklayın. Daha fazlasını yapmak isterseniz buraya geri gelin. İyi eğlenceler!
+    </div>
+
+  </section>
+  
+</Layout>

@@ -5,7 +5,9 @@ import Layout from '../layouts/Layout.astro'
 <Layout>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
-
+    .boxa{
+      text-decoration-line: none;
+    }
     .harita-container {
       display: flex;
       background-color: #f254c3;
@@ -40,7 +42,7 @@ import Layout from '../layouts/Layout.astro'
     .card {
       background: white;
       border-radius: 1rem;
-      padding: 1rem;
+      
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -125,53 +127,68 @@ import Layout from '../layouts/Layout.astro'
     <div class="sidebar-title">Frontend Haritası</div>
 
     <div class="grid-content">
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/react-icon.png" alt="React" />
-        <h3>React</h3>
-        <h3>(Boş Daire)</h3>
-        <h2>Tipi: Kütüphane</h2>
-      </div>
 
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/vue-icon.png" alt="Vue" />
-        <h3>Vue</h3>
-        <h3>(Mobilyalı Daire)</h3>
-        <h2>Tipi: Framework</h2>
-      </div>
+      <a href="frontend-react" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/react-icon.png" alt="React" />
+          <h3>React</h3>
+          <h3>(Boş Daire)</h3>
+          <h2>Tipi: Kütüphane</h2>
+        </div>
+      </a>
 
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/flutter-icon.png" alt="Flutter" />
-        <h3>Flutter</h3>
-        <h3>(Prefabrik Villa)</h3>
-        <h2>Tipi: UI SDK</h2>
-      </div>
+      <a href="frontend-vue" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/vue-icon.png" alt="Vue" />
+          <h3>Vue</h3>
+          <h3>(Mobilyalı Daire)</h3>
+          <h2>Tipi: Framework</h2>
+        </div>
+      </a>  
 
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/react-icon.png" alt="React Native" />
-        <h3>React-Native</h3>
-        <h3>(Karavan)</h3>
-        <h2>Tipi: Mobil Framework</h2>
-      </div>
+      <a href="frontend-flutter" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/flutter-icon.png" alt="Flutter" />
+          <h3>Flutter</h3>
+          <h3>(Prefabrik Villa)</h3>
+          <h2>Tipi: UI SDK</h2>
+        </div>
+      </a>
 
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/svelte-icon.png" alt="Svelte" />
-        <h3>Svelte</h3>
-        <h3>(Tiny House)</h3>
-        <h2>Tipi: Framework</h2>
-      </div>
+      <a href="frontend-flutter" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/react-icon.png" alt="React Native" />
+          <h3>React-Native</h3>
+          <h3>(Karavan)</h3>
+          <h2>Tipi: Mobil Framework</h2>
+        </div>
+      </a>
 
-      <div class="card">
-        <div class="plus">+</div>
-        <img src="public/images/astro-icon.png" alt="Astro" />
-        <h3>Astro</h3>
-        <h3>(Bungalov)</h3>
-        <h2>Tipi: Meta-Framework</h2>
-      </div>
+      <a href="frontend-astro" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/svelte-icon.png" alt="Svelte" />
+          <h3>Svelte</h3>
+          <h3>(Tiny House)</h3>
+          <h2>Tipi: Framework</h2>
+        </div>
+      </a>
+      
+
+      <a href="frontend-astro" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/astro-icon.png" alt="Astro" />
+          <h3>Astro</h3>
+          <h3>(Bungalov)</h3>
+          <h2>Tipi: Meta-Framework</h2>
+        </div>
+      </a>
+
     </div>
   </section>
 </Layout>
