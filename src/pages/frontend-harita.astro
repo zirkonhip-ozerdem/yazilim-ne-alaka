@@ -125,13 +125,46 @@ import Layout from '../layouts/Layout.astro'
 
   <section class="harita-container">
     <div class="sidebar-title">Frontend Haritası</div>
+    <div>
+      <p style="color:#fff34a; font-size: 24px;">Mesele tuğla değil. Mesele mimarlık. Mesele nerede yaşamayı seçiyorsun.</p><br/>
+      <p style="color: #0000eec4; font-size: 18px;"><strong>Karar Sorusu: Neyi hedefliyorsun?<br/></strong><br/>
+          1.Web için sade ve temel başlamak → React / Vue / Svelte<br/>
+          Her şeyi sen kur → React (boş daire)<br/>
+          Kolay öğren, her şey hazır → Vue (mobilyalı daire)<br/>
+          Hızlı ve küçük sistemler → Svelte (tiny house)<br/><br/>
 
+          2. Web için sistemli ve büyük iş → Next.js / Astro<br/>
+          Modern ve kurumsal → Next.js (apartman)<br/>
+          Blog / içerik odaklı site → Astro (bungalov)<br/><br/>
+
+          3. Mobil uygulama istiyorum → React Native / Flutter<br/>
+          Web kökenliyim → React Native (karavan)<br/>
+          Tam mobil, tek kod → Flutter (prefabrik villa)<br/>
+
+      </p>
+      <p style="color:#fff34a; font-size: 16px;">NOT: Meta-Framework demek => Müteahhit + Şantiye Planı <br/>
+          {"{Yani routing, sayfa mimarisi, SSR, site mimarisi yapar}"} <br/>
+          Yaniiiii: Arsanın planını çizer, evi kurar, ustaları organize eder.</p>
+      <p style="color:#fff34a; font-size: 14px; font-style: italic;">
+        NOT: Bu kıyaslama “öğrenme ve başlangıç yaklaşımı” için geçerli.<br/>
+        Yani hepsi aynı "ligde" değil, ama aynı amaçla başlayan biri için uygun yaşam tarzı benzetmeleriyle anlatılmak istenmiştir...</p>
+    </div>
     <div class="grid-content">
+
+      <a href="frontend-temel" class="boxa">
+         <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/htmlcssjs-cadir.png" alt="Angular" />
+          <h3>HTML-CSS-JS</h3>
+          <h3>(Çadır)</h3>
+          <h2>Tipi: Web'in Taban Katmanı</h2>
+        </div>
+      </a>
 
       <a href="frontend-react" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/react-icon.png" alt="React" />
+          <img src="public/images/react-bos-daire.png" alt="React" />
           <h3>React</h3>
           <h3>(Boş Daire)</h3>
           <h2>Tipi: Kütüphane</h2>
@@ -141,7 +174,7 @@ import Layout from '../layouts/Layout.astro'
       <a href="frontend-vue" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/vue-icon.png" alt="Vue" />
+          <img src="public/images/vue-mobilyali-daire.png" alt="Vue" />
           <h3>Vue</h3>
           <h3>(Mobilyalı Daire)</h3>
           <h2>Tipi: Framework</h2>
@@ -151,17 +184,17 @@ import Layout from '../layouts/Layout.astro'
       <a href="frontend-flutter" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/flutter-icon.png" alt="Flutter" />
+          <img src="public/images/flutter-prefabrik-villa.png" alt="Flutter" />
           <h3>Flutter</h3>
           <h3>(Prefabrik Villa)</h3>
           <h2>Tipi: UI SDK</h2>
         </div>
       </a>
 
-      <a href="frontend-flutter" class="boxa">
+      <a href="frontend-react-native" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/react-icon.png" alt="React Native" />
+          <img src="public/images/react-native-karavan.png" alt="React Native" />
           <h3>React-Native</h3>
           <h3>(Karavan)</h3>
           <h2>Tipi: Mobil Framework</h2>
@@ -171,7 +204,7 @@ import Layout from '../layouts/Layout.astro'
       <a href="frontend-astro" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/svelte-icon.png" alt="Svelte" />
+          <img src="public/images/svelte-tiny-house.png" alt="Svelte" />
           <h3>Svelte</h3>
           <h3>(Tiny House)</h3>
           <h2>Tipi: Framework</h2>
@@ -182,12 +215,35 @@ import Layout from '../layouts/Layout.astro'
       <a href="frontend-astro" class="boxa">
         <div class="card">
           <div class="plus">+</div>
-          <img src="public/images/astro-icon.png" alt="Astro" />
+          <img src="public/images/astro-bungalov-ev.png" alt="Astro" />
           <h3>Astro</h3>
           <h3>(Bungalov)</h3>
           <h2>Tipi: Meta-Framework</h2>
         </div>
       </a>
+
+       <a href="frontend-astro" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/nextjs-site-apartmanı.png" alt="Next.js" />
+          <h3>Next.js</h3>
+          <h3>(Site Yönetimli Apartman)</h3>
+          <h2>Tipi: Meta-Framework</h2>
+        </div>
+      </a>
+
+       <a href="frontend-astro" class="boxa">
+        <div class="card">
+          <div class="plus">+</div>
+          <img src="public/images/angular-kosk.png" alt="Angular" />
+          <h3>Angular</h3>
+          <h3>(Site Yönetimli Apartman)</h3>
+          <h2>Tipi: Meta-Framework</h2>
+        </div>
+      </a>
+
+
+
 
     </div>
   </section>
