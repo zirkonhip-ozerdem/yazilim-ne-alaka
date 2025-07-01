@@ -1,59 +1,37 @@
----
-// Hero bölümü: girişteki grid yapı
----
-
 <style>
   .hero-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .card {
     background: white;
     border-radius: 1.5rem;
     min-height: 200px;
+    overflow: hidden;
   }
+
   /* Tüm kart linkleri için genel stil */
-.card-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none; /* alt çizgi olmasın */
-  color: inherit; /* metin rengi bozulmasın */
-  transition: transform 0.2s ease;
-}
-
-.card-link:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-}
-  .cardfrontend {
-    background: white;
-    border-radius: 1.5rem;
-    min-height: 50px;
-    min-width: 300px;
-  }
-  .cardfrontend2 {
-    background: #f974a6;
-    border-radius: 1.5rem;
-    min-height: 150px;
-    min-width: 330px;
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+    height: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
   }
 
-  .cardmagazin{
-     background: white;
-     border-radius: 1.5rem;
-    min-height: 150px;
-    min-width: 330px;
+  .card-link:hover {
+    transform: scale(1.02);
   }
-   .cardbackend {
-    background: white;
-    border-radius: 1.5rem;
-    min-height: 50px;
-    min-width: 200px;
-  }
+
   .highlight-card {
     color: white;
     display: flex;
@@ -64,6 +42,7 @@
     font-weight: bold;
     font-size: 1rem;
     min-height: 200px;
+    box-sizing: border-box;
   }
 
   .card-frontend {
@@ -78,65 +57,105 @@
     background-color: #F0A7BE;
   }
 
+  .card-pink {
+    background: #f974a6;
+  }
+
+  .card-white {
+    background: white;
+  }
+
   .arrow {
     align-self: flex-end;
     font-size: 1.5rem;
     margin-top: auto;
   }
 
-  .arrowhite {
+  .arrow-pink {
     align-self: flex-end;
     font-size: 1.5rem;
     margin-top: auto;
-     color: #f974a6;
-  }
-  .magazinyazi{
     color: #f974a6;
   }
-  @media (max-width: 768px) {
+
+  .text-pink {
+    color: #f974a6;
+  }
+
+  .card-link img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    object-fit: contain;
+  }
+
+  /* Özel kart boyutları için responsive ayarlar */
+  @media (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
     .hero-grid {
       grid-template-columns: 1fr;
+      padding: 0.5rem;
+    }
+    
+    .card-link {
+      padding: 1rem;
+    }
+    
+    .highlight-card {
+      min-height: 180px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .card-link {
+      min-height: auto;
     }
   }
 </style>
 
 <section class="hero-grid">
-   
-    <a href="/frontend-harita" class="highlight-card cardfrontend2 card-link">
-      <div>Kullanıcıyla İlk Temas:<br /><strong>FRONTEND</strong></div>
-      <img src="public/svg/frontend.svg" alt="frontend"   />
-      <div class="arrow">→</div>
-    </a>
+  <a href="/frontend-harita" class="highlight-card card-pink card-link">
+    <div>Kullanıcıyla İlk Temas:<br /><strong>FRONTEND</strong></div>
+    <img src="public/svg/frontend.svg" alt="frontend" />
+    <div class="arrow">→</div>
+  </a>
 
-    <a href="/yazilim-magazini" class="highlight-card cardmagazin card-link">
-      <strong class="magazinyazi">Gıybet varsa biz de varız:</strong><strong class="magazinyazi"> YAZILIMIN MAGAZİNSEL KÖŞESİ BURADA.</strong> 
-      <img src="public/svg/yazilim-magazini.svg" alt="frontend" />
-      <div class="arrowhite">→</div>
-    </a>
+  <a href="/yazilim-magazini" class="highlight-card card-white card-link">
+    <strong class="text-pink">Gıybet varsa biz de varız:</strong><strong class="text-pink"> YAZILIMIN MAGAZİNSEL KÖŞESİ BURADA.</strong> 
+    <img src="public/svg/yazilim-magazini.svg" alt="frontend" />
+    <div class="arrow-pink">→</div>
+  </a>
 
-    <a href="/git-github" class="highlight-card cardmagazin card-link">
-        <div><strong class="magazinyazi">Yazılımda bazen hata yaparsın:</strong><br /><strong class="magazinyazi"> BAZEN GEÇMİŞE DÖNMEK İSTERSİN. <br />Git VE GitHub KÜLTÜRÜ</strong></div>
-        <img src="public/svg/yazilim-github.svg" alt="github"   />
-        <div class="arrowhite"> → </div>
-    </a>
- 
-    <a href="/proje-yonetimi" class="highlight-card cardbackend card-link">
-      <div><strong class="magazinyazi">Yazılım fikrini hayata geçirmek:</strong><br /><strong class="magazinyazi"> HER ZAMAN PLANLA BAŞLAR.<br />PROJE YÖNETİMİ</strong></div>
-      <img src="public/svg/yazilim-proje-yonetimi.svg" alt="projeyonetimi"   />
-      <div class="arrowhite">→</div>
-    </a>
+  <a href="/git-github" class="highlight-card card-white card-link">
+    <div><strong class="text-pink">Yazılımda bazen hata yaparsın:</strong><br /><strong class="text-pink"> BAZEN GEÇMİŞE DÖNMEK İSTERSİN. <br />Git VE GitHub KÜLTÜRÜ</strong></div>
+    <img src="public/svg/yazilim-github.svg" alt="github" />
+    <div class="arrow-pink">→</div>
+  </a>
 
-     
-    <a href="/backend-harita" class="card highlight-card card-backend card-link">
-      <div>Hatırlayan Sistem:<br /><strong>BACKEND</strong></div>
-      <img src="public/svg/backend.svg" alt="backend"  />
-      <div class="arrow">→</div>
-    </a>  
+  <a href="/proje-yonetimi" class="highlight-card card-white card-link">
+    <div><strong class="text-pink">Yazılım fikrini hayata geçirmek:</strong><br /><strong class="text-pink"> HER ZAMAN PLANLA BAŞLAR.<br />PROJE YÖNETİMİ</strong></div>
+    <img src="public/svg/yazilim-proje-yonetimi.svg" alt="projeyonetimi" />
+    <div class="arrow-pink">→</div>
+  </a>
 
-    <a href="/sunucu-harita" class="card highlight-card card-server card-link">
-      <div>Sistemin Kalbi:<br /><strong>SUNUCU TARAFI</strong></div>
-      <img src="public/svg/sunucu.svg" alt="sunucu"  />
-      <div class="arrow">→</div>
-    </a>
- 
+  <a href="/backend-harita" class="highlight-card card-backend card-link">
+    <div>Hatırlayan Sistem:<br /><strong>BACKEND</strong></div>
+    <img src="public/svg/backend.svg" alt="backend" />
+    <div class="arrow">→</div>
+  </a>  
+
+  <a href="/sunucu-harita" class="highlight-card card-server card-link">
+    <div>Sistemin Kalbi:<br /><strong>SUNUCU TARAFI</strong></div>
+    <img src="public/svg/sunucu.svg" alt="sunucu" />
+    <div class="arrow">→</div>
+  </a>
 </section>

@@ -75,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
 
-      .ladder-container {
+  .ladder-container {
     display: flex;
     align-items: flex-end;
     gap: 2rem;
@@ -100,6 +100,16 @@ import Layout from '../layouts/Layout.astro';
     transition: all 0.3s ease;
   }
 
+  .step2{
+    background-color: #0d89c2;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      font-weight: 600;
+      transition: all 0.3s ease;
+  }
   .step:nth-child(5),
   .step:nth-child(6) {
     width: 100%;
@@ -108,6 +118,65 @@ import Layout from '../layouts/Layout.astro';
   .step:not(:nth-child(5)):not(:nth-child(6)) {
     width: 100%;
   }
+
+      /* XSmall - Mobil en küçük */
+    @media (max-width: 479px) {
+
+        .ladder-container {
+          display: flex;
+          align-items: flex-end;
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .ladder {
+          
+          flex-direction: column;
+       
+          gap: 0.8rem;
+        }
+
+        .step {
+          background-color: #ff4a50;
+          color: #000;
+          padding: 10px;
+          border-radius: 8px;
+          text-align: left;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+   
+    }
+
+    /* Small - Mobil */
+    @media (min-width: 480px) and (max-width: 767px) {
+      body {
+        background: lightgreen;
+      }
+    }
+
+    /* Medium - Tablet */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      body {
+        background: lightskyblue;
+      }
+    }
+
+    /* Large - Küçük Laptop */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      body {
+        background: lightgoldenrodyellow;
+      }
+    }
+
+    /* XLarge - Geniş ekran */
+    @media (min-width: 1280px) {
+      body {
+        background: lavender;
+      }
+    }
+
   </style>
 
   <section class="page">
@@ -134,21 +203,35 @@ import Layout from '../layouts/Layout.astro';
     </div><br/><br/>
     
  
- <div class="ladder-container">
-  <!-- Prefabrik ev görseli -->
- <div class="header-pill"> <img src="public/images/flutter-sum.png"/></div>
+    <div class="ladder-container">
+      <!-- Prefabrik ev görseli : mobilde ayarlama yapılsın şimdilik yüzdeelli yadım taşma oluyor yoksa-->
+      <div class="header-pill"> <img src="public/images/flutter-sum.png" width="50%"/></div>
 
-  <!-- Merdiven -->
-  <div class="ladder">
-    <div class="step">0. Flutter yapısı: Bir Prefabrik Villanın içine giriyoruz.</div>
-    <div class="step">1. Prefabrik villamız: Flutter’ımız.</div>
-    <div class="step">2. Her şey parçalardan oluşur. Ama o parçalar neden öyle? Neden o malzeme ile yapılmış?</div>
-    <div class="step">3. Widget, Flutter’da her şeyi temsil eden temel yapı taşıdır.</div>
-    <div class="step">-- Villa komple bir yapıdır (yani büyük bir widget )</div>
-    <div class="step">-- Havuz ise bu villanın içinde yer alan, tek başına bir parça, yani villanın alt parçasıdır. Yani, havuz da bir widget’tır, çünkü villa gibi yapının içindeki bir görsel veya işlevsel bileşendir.</div>
-    <div class="step">4. Widget tree -Tüm arsa planı ve yapıların tamamı</div>
-  </div>
-</div>
+        <!-- Merdiven -->
+        <div class="ladder">
+          <div class="step">0. Flutter yapısı: Bir Prefabrik Villanın içine giriyoruz.</div>
+          <div class="step">1. Prefabrik villamız: Flutter’ımız.</div>
+          <div class="step">2. Her şey parçalardan oluşur. Ama o parçalar neden öyle? Neden o malzeme ile yapılmış?</div>
+          <div class="step">3. Widget, Flutter’da her şeyi temsil eden temel yapı taşıdır.</div>
+          <div class="step">-- Villa komple bir yapıdır (yani büyük bir widget )</div>
+          <div class="step">-- Havuz ise bu villanın içinde yer alan, tek başına bir parça, yani villanın alt parçasıdır. Yani, havuz da bir widget’tır, çünkü villa gibi yapının içindeki bir görsel veya işlevsel bileşendir.</div>
+          <div class="step">4. Widget tree -Tüm arsa planı ve yapıların tamamı</div>
+        </div>
+  
+    </div>
+
+    <div class="ladder-container">
+        <div class="ladder">
+
+          <div class="step2">0. <strong>Stateless Widget</strong> - Her zaman aynı....Değişmeyen, durum tutmayan yapı, Kurabiye kalıbı gibi: her seferinde aynı</div>
+          <div class="step2">1.  <strong>Stateful Widget</strong> - Duruma göre değişir....!İçinde değişen veri tutar, Kurabiyenin süslenmesi gibi: her biri farklı</div>
+          <div class="step2">2.  <strong>Layout Widget </strong> - Diğer widget’ları düzenler, Tepsi gibi: Row, Column, Stack ile dizer</div>
+          <div class="step2">3.  Widget Tree,  Tüm yapının hiyerarşisi, Kim kimin içinde?</div>
+          
+        </div>
+    
+          <div class="header-pill"> <img src="public/images/flutter-kurabiye-kalibi-metaforu.png" style="width: 50%;"/></div>
+    </div>
   </section>
 
 </Layout>
