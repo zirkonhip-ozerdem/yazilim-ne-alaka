@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
+ import Layout from '../layouts/Layout.astro';
+ import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout>
@@ -8,11 +9,11 @@ import Layout from '../layouts/Layout.astro';
 
     .page {
       background: #736ff4;
-      background-image: url('/images/bg-texture.png'); /* sen buraya dokulu arka plan koyabilirsin */
+      background-image: url('/images/bg-texture.png');
       background-size: cover;
       background-repeat: no-repeat;
       min-height: 100vh;
-      padding: 2rem;
+      padding: clamp(1rem, 5vw, 2rem); /* Responsive padding */
       color: white;
       font-family: 'Fredoka', sans-serif;
     }
@@ -21,8 +22,8 @@ import Layout from '../layouts/Layout.astro';
       background: #ff4ed8;
       color: yellow;
       font-weight: bold;
-      font-size: 1.6rem;
-      padding: 0.5rem 1.5rem;
+      font-size: clamp(1.2rem, 4vw, 1.6rem); /* Responsive font size */
+      padding: 0.5rem clamp(1rem, 3vw, 1.5rem); /* Responsive padding */
       border-radius: 2rem;
       display: inline-block;
       transform: rotate(-5deg);
@@ -34,204 +35,168 @@ import Layout from '../layouts/Layout.astro';
       background: white;
       color: #2a2afc;
       font-weight: bold;
-      font-size: 1.5rem;
-      padding: 0.8rem 1.5rem;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      padding: 0.8rem clamp(1rem, 3vw, 1.5rem);
       border-radius: 2rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .tech-badge img {
-      width: 28px;
+      width: clamp(24px, 6vw, 28px);
       height: auto;
     }
 
     .content {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 3vw, 1.2rem);
       color: white;
       font-family: 'Arial', sans-serif;
-      line-height: 2.2rem;
+      line-height: 1.6;
       max-width: 100%;
+      margin-bottom: 2rem;
     }
 
-    @media (max-width: 768px) {
-      .header-pill {
-        font-size: 1.3rem;
-      }
+    .ladder-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
 
-      .tech-badge {
-        font-size: 1.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
+    @media (min-width: 768px) {
+      .ladder-container {
+        flex-direction: row;
+        align-items: flex-start;
       }
-
-      .content {
-        font-size: 1.1rem;
-        line-height: 1.8rem;
+      
+      .ladder-container:nth-child(odd) {
+        flex-direction: row-reverse;
       }
     }
 
+    .ladder-container img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-  .ladder-container {
-    display: flex;
-    align-items: flex-end;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+    .ladder {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+    }
 
-  .ladder {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 0.8rem;
-  }
-
-  .step {
-    background-color: #fff34a;
-    color: #000;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .step2{
-    background-color: #0d89c2;
-      color: #ffffff;
-      padding: 10px;
+    .step, .step2 {
+      padding: clamp(0.8rem, 2vw, 1rem);
       border-radius: 8px;
       text-align: left;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       font-weight: 600;
       transition: all 0.3s ease;
-  }
-  .step:nth-child(5),
-  .step:nth-child(6) {
-    width: 100%;
-  }
-
-  .step:not(:nth-child(5)):not(:nth-child(6)) {
-    width: 100%;
-  }
-
-      /* XSmall - Mobil en küçük */
-    @media (max-width: 479px) {
-
-        .ladder-container {
-          display: flex;
-          align-items: flex-end;
-          gap: 2rem;
-          margin-top: 2rem;
-        }
-
-        .ladder {
-          
-          flex-direction: column;
-       
-          gap: 0.8rem;
-        }
-
-        .step {
-          background-color: #ff4a50;
-          color: #000;
-          padding: 10px;
-          border-radius: 8px;
-          text-align: left;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-   
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      line-height: 1.5;
     }
 
-    /* Small - Mobil */
-    @media (min-width: 480px) and (max-width: 767px) {
-      body {
-        background: lightgreen;
+    .step {
+      background-color: #fff34a;
+      color: #000;
+    }
+
+    .step2 {
+      background-color: #0d89c2;
+      color: #ffffff;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 767px) {
+      .ladder-container {
+        flex-direction: column;
+      }
+      
+      .ladder-container img {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      
+      .step, .step2 {
+        width: 100%;
       }
     }
 
-    /* Medium - Tablet */
+    /* Tablet adjustments */
     @media (min-width: 768px) and (max-width: 1023px) {
-      body {
-        background: lightskyblue;
+      .ladder-container {
+        flex-wrap: wrap;
+      }
+      
+      .ladder-container > * {
+        flex: 1 1 300px;
       }
     }
 
-    /* Large - Küçük Laptop */
-    @media (min-width: 1024px) and (max-width: 1279px) {
-      body {
-        background: lightgoldenrodyellow;
+    /* Hover effects for larger screens */
+    @media (hover: hover) and (pointer: fine) {
+      .step:hover, .step2:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
       }
     }
-
-    /* XLarge - Geniş ekran */
-    @media (min-width: 1280px) {
-      body {
-        background: lavender;
-      }
-    }
-
   </style>
 
   <section class="page">
-    <div class="header-pill"> Kodla Kurulan Prefabrik Rüyalar: </div>
+    <div class="header-pill">Kodla Kurulan Prefabrik Rüyalar:</div>
 
     <div class="tech-badge">
-        Flutter
+      Flutter
     </div>
 
     <div class="content">
-        Bir gün Google dedi ki: “Mobil uygulama geliştirmek neden bu kadar çileli?”
-        Android ayrı, iOS ayrı; birine yazsan öbürüne yetişemiyorsun. İşte tam bu sorunla boğuşurken 2017’de sahneye çıktı Flutter.
-        Ama sıradan bir “cross-platform” aracı gibi değil adeta kurulum paketiyle gelen bir mimar gibi: Hem boyayı yanında getiriyor (UI bileşenleri), hem çiviyi (widget’lar), hem de iskeleyi (render engine).<br/>
-            Flutter’ın arkasında, yıllardır köşede sessizce bekleyen bir kahraman vardı: Dart.
-        Google, Dart’ı aslında yıllar önce (2011’de) JavaScript’in tahtına aday yapmak istemişti. Tarayıcıların içini daha düzenli, daha hızlı, daha modern kodla dolduracak bir dildi. Ama olmadı… JavaScript öyle kolay kolay yerini bırakmazdı.<br/>
-        Dart biraz yalnız kaldı. Ama Google da Dart’tan vazgeçmedi. Ona yepyeni bir hayat çizdi:
-        “Sen JS olamadın ama belki mobil dünyada sahneyi alırsın?”
-        Ve işte Flutter böyle doğdu. Dart’a yeni bir beden, Flutter’a ise güçlü bir beyin verdi.
+      Bir gün Google dedi ki: "Mobil uygulama geliştirmek neden bu kadar çileli?"
+      Android ayrı, iOS ayrı; birine yazsan öbürüne yetişemiyorsun. İşte tam bu sorunla boğuşurken 2017'de sahneye çıktı Flutter.
+      Ama sıradan bir "cross-platform" aracı gibi değil adeta kurulum paketiyle gelen bir mimar gibi: Hem boyayı yanında getiriyor (UI bileşenleri), hem çiviyi (widget'lar), hem de iskeleyi (render engine).<br/><br/>
+      Flutter'ın arkasında, yıllardır köşede sessizce bekleyen bir kahraman vardı: Dart.
+      Google, Dart'ı aslında yıllar önce (2011'de) JavaScript'in tahtına aday yapmak istemişti. Tarayıcıların içini daha düzenli, daha hızlı, daha modern kodla dolduracak bir dildi. Ama olmadı... JavaScript öyle kolay kolay yerini bırakmazdı.<br/><br/>
+      Dart biraz yalnız kaldı. Ama Google da Dart'tan vazgeçmedi. Ona yepyeni bir hayat çizdi:
+      "Sen JS olamadın ama belki mobil dünyada sahneyi alırsın?"
+      Ve işte Flutter böyle doğdu. Dart'a yeni bir beden, Flutter'a ise güçlü bir beyin verdi.
 
-        Flutter + Dart = Tek kod tabanıyla Android, iOS, Web, Masaüstü uygulamaları yazabildiğin geliştirici ütopyası.<br/>
-        Bugün Flutter, sadece mobil için değil, neredeyse her platform için yazılım üreten bir çatıya dönüşüyor.
-        Kurduğun her şey bir widget. Her ekran, aslında mantıklı yerleştirilmiş minik kutucuklardan oluşuyor.
-        Bir nevi kodla kurulan bir LEGO evi gibi. Ne kadar iyi dizersen, o kadar sağlam ve estetik bir yapı çıkıyor.
-    </div><br/><br/>
+      Flutter + Dart = Tek kod tabanıyla Android, iOS, Web, Masaüstü uygulamaları yazabildiğin geliştirici ütopyası.<br/><br/>
+      Bugün Flutter, sadece mobil için değil, neredeyse her platform için yazılım üreten bir çatıya dönüşüyor.
+      Kurduğun her şey bir widget. Her ekran, aslında mantıklı yerleştirilmiş minik kutucuklardan oluşuyor.
+      Bir nevi kodla kurulan bir LEGO evi gibi. Ne kadar iyi dizersen, o kadar sağlam ve estetik bir yapı çıkıyor.
+    </div>
     
- 
     <div class="ladder-container">
-      <!-- Prefabrik ev görseli : mobilde ayarlama yapılsın şimdilik yüzdeelli yadım taşma oluyor yoksa-->
-      <div class="header-pill"> <img src="public/images/flutter-sum.png" width="50%"/></div>
-
-        <!-- Merdiven -->
-        <div class="ladder">
-          <div class="step">0. Flutter yapısı: Bir Prefabrik Villanın içine giriyoruz.</div>
-          <div class="step">1. Prefabrik villamız: Flutter’ımız.</div>
-          <div class="step">2. Her şey parçalardan oluşur. Ama o parçalar neden öyle? Neden o malzeme ile yapılmış?</div>
-          <div class="step">3. Widget, Flutter’da her şeyi temsil eden temel yapı taşıdır.</div>
-          <div class="step">-- Villa komple bir yapıdır (yani büyük bir widget )</div>
-          <div class="step">-- Havuz ise bu villanın içinde yer alan, tek başına bir parça, yani villanın alt parçasıdır. Yani, havuz da bir widget’tır, çünkü villa gibi yapının içindeki bir görsel veya işlevsel bileşendir.</div>
-          <div class="step">4. Widget tree -Tüm arsa planı ve yapıların tamamı</div>
-        </div>
-  
+      <img src="public/images/flutter-sum.png" alt="Flutter prefabrik yapı metaforu" />
+      
+      <div class="ladder">
+        <div class="step">0. Flutter yapısı: Bir Prefabrik Villanın içine giriyoruz.</div>
+        <div class="step">1. Prefabrik villamız: Flutter'ımız.</div>
+        <div class="step">2. Her şey parçalardan oluşur. Ama o parçalar neden öyle? Neden o malzeme ile yapılmış?</div>
+        <div class="step">3. Widget, Flutter'da her şeyi temsil eden temel yapı taşıdır.</div>
+        <div class="step">-- Villa komple bir yapıdır (yani büyük bir widget)</div>
+        <div class="step">-- Havuz ise bu villanın içinde yer alan, tek başına bir parça, yani villanın alt parçasıdır. Yani, havuz da bir widget'tır, çünkü villa gibi yapının içindeki bir görsel veya işlevsel bileşendir.</div>
+        <div class="step">4. Widget tree -Tüm arsa planı ve yapıların tamamı</div>
+      </div>
     </div>
 
     <div class="ladder-container">
-        <div class="ladder">
-
-          <div class="step2">0. <strong>Stateless Widget</strong> - Her zaman aynı....Değişmeyen, durum tutmayan yapı, Kurabiye kalıbı gibi: her seferinde aynı</div>
-          <div class="step2">1.  <strong>Stateful Widget</strong> - Duruma göre değişir....!İçinde değişen veri tutar, Kurabiyenin süslenmesi gibi: her biri farklı</div>
-          <div class="step2">2.  <strong>Layout Widget </strong> - Diğer widget’ları düzenler, Tepsi gibi: Row, Column, Stack ile dizer</div>
-          <div class="step2">3.  Widget Tree,  Tüm yapının hiyerarşisi, Kim kimin içinde?</div>
-          
-        </div>
-    
-          <div class="header-pill"> <img src="public/images/flutter-kurabiye-kalibi-metaforu.png" style="width: 50%;"/></div>
+      <div class="ladder">
+        <div class="step2">0. <strong>Stateless Widget</strong> - Her zaman aynı....Değişmeyen, durum tutmayan yapı, Kurabiye kalıbı gibi: her seferinde aynı</div>
+        <div class="step2">1. <strong>Stateful Widget</strong> - Duruma göre değişir....!İçinde değişen veri tutar, Kurabiyenin süslenmesi gibi: her biri farklı</div>
+        <div class="step2">2. <strong>Layout Widget</strong> - Diğer widget'ları düzenler, Tepsi gibi: Row, Column, Stack ile dizer</div>
+        <div class="step2">3. Widget Tree, Tüm yapının hiyerarşisi, Kim kimin içinde?</div>
+      </div>
+      
+      <img src="public/images/flutter-kurabiye-kalibi-metaforu.png" alt="Flutter kurabiye kalıbı metaforu" />
     </div>
   </section>
-
 </Layout>
