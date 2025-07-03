@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+    .astro-wrapper {
+      background: #fef9f3;
+      padding: 3rem 1.5rem;
+      font-family: 'Fira Mono', monospace;
+      color: #333;
+    }
+
+    .header-box {
+      background: #fff8e7;
+      border-left: 8px solid #f254c3;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .header-box h1 {
+      font-size: 2.5rem;
+      color: #f254c3;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-box p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #0000aa;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-box {
+      background: #fffde8;
+      border-left: 6px solid #ffd54f;
+      padding: 1rem 1.2rem;
+      border-radius: 0.7rem;
+      font-size: 0.95rem;
+      color: #7a5600;
+      margin-bottom: 1.5rem;
+    }
+
+    .astro-img {
+      max-width: 100%;
+      margin: 1rem 0;
+      border-radius: 1rem;
+    }
+
+    .section-row {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section-row .section {
+        flex: 1 1 45%;
+        box-sizing: border-box;
+    }
+
+    .step-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .step-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        background: #fffef7;
+        padding: 1rem 1.5rem;
+        border-left: 6px solid #f254c3;
+        border-radius: 0.8rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .step-number {
+        background-color: #f254c3;
+        color: white;
+        font-weight: bold;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Fira Mono', monospace;
+        flex-shrink: 0;
+    }
+
+    .step-box p {
+        margin: 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .step-box code {
+        background: #f0f0f0;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.3rem;
+        font-size: 0.95rem;
+        font-family: monospace;
+    }
+
+    .step-box a {
+        font-weight: bold;
+    }
+
+    .terminal-img {
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+        max-width: 100%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+ 
+    @media (max-width: 640px) {
+      .header-box h1 {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 768px) {
+        .section-row {
+            flex-direction: column;
+        }
+
+        .section-row .section {
+            flex: 1 1 100%;
+        }
+    }
+
+  </style>
+
+  <section class="astro-wrapper">
+    <div class="header-box">
+      <h1>Astro: Bungalov Gibi Sade, Güçlü ve Akıllı</h1>
+      <p>Astro bir meta-framework’tür. Yani sadece bir yapı değil, yapıyı kuran sistemin tamamıdır. Sade görünür ama içinde büyük işler döner. Tıpkı tek katlı ama planlı bir bungalov gibi.</p>
+    </div>
+
+    <div class="section">
+      <h2>⛺ Island Architecture (Ada Mimarisi)</h2>
+      <p>Astro'nun en güçlü taraflarından biri, "Island Architecture" yaklaşımı. Sayfa ilk yüklendiğinde sadece HTML gönderir, gerekli olan interaktif bileşenleri sonradan, adalar gibi yükler. Bu sayede performans tavan yapar.</p>
+      <div class="highlight-box">
+        🚀 Astro ile gönderilen sayfa boyutu, klasik SPA’lere göre %70’e kadar daha az olabilir!
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📚 Markdown & Content Collections</h2>
+      <p>Astro, içerik üreticileri için biçilmiş kaftan. Markdown dosyalarıyla çalışmak kolay, koleksiyonlarla sayfa oluşturmak düzenli. Blog, dokümantasyon, vitrin sitesi? Hepsi için hazır altyapı.</p>
+    </div>
+
+    <div class="section">
+      <h2>📦 Meta-Framework Ne Demekti?</h2>
+      <p>Astro sadece bir araç değil. Routing, build sistemi, SSR, bileşen kullanımı... Hepsini planlayan bir üst akıl gibi davranır. Yani müteahhit + proje yöneticisi + şantiye planı bir arada.</p>
+      <div class="highlight-box">
+        🧱 Sen sadece içerik ve bileşenleri yerleştiriyorsun; çatıyı, altyapıyı Astro kuruyor.
+      </div>
+    </div>
+
+    <div class="section-row">
+        <div class="section">
+            <h2>🏠 Neden Bungalov?</h2>
+            <p>Bir bungalov sade olabilir ama eksik değildir. Kendi içinde düzenli, hızlı, erişilebilir bir yaşam sunar. Astro da öyle: Karmaşık görünmez ama karmaşık işler başarır.</p>
+            <img src="/images/astro-bungalov-ev.png" alt="Astro - Bungalov" class="astro-img" />
+        </div>
+
+        <div class="section">
+            <h2>💡 Kimler İçin Uygun?</h2>
+            <p>📝 İçerik odaklı site yapanlar<br/>
+            ⚡️ Hız takıntılı geliştiriciler<br/>
+            🧘 Sade ama planlı projeler kurmak isteyenler<br/>
+            💬 React, Vue gibi bileşenleri Astro içinde kullanmak isteyenler</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Kuruluma Başlayalım</h2>
+        <p>Artık bungalovumuzu inşa etmeye hazırız. İşte Astro projesini başlatmak için gereken temel adımlar:</p>
+
+        <div class="step-list">
+            <div class="step-box">
+                <span class="step-number">1</span>
+                <p>
+                    <strong>Node.js yüklü mü?</strong><br/>
+                    Terminale <code>node -v</code> yaz, bir sürüm numarası (örneğin <code>v18.17.1</code>) görüyorsan hazırsın.<br/><br/>
+                    ❌ Sürüm görünmüyorsa: 
+                    <a href="https://nodejs.org/" target="_blank" style="color:#f254c3; text-decoration: underline;">nodejs.org</a>'dan Node.js LTS sürümünü indir ve yükle.
+                </p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-number">2</span>
+                <p><strong>Yeni Astro projesi başlat:</strong><br/><code>npm create astro@latest</code></p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-number">3</span>
+                <div>
+                    <p><strong>Kurulum sihirbazına cevap ver:</strong><br/>
+                    Astro sana şu soruları sorar:
+                    <br/>– Proje adı<br/>
+                    – Template seçimi<br/>
+                    – TypeScript, Git, npm vs.
+                    </p>
+                    <img src="public/images/astro-setup-terminal.png" alt="Astro terminal kurulumu" class="terminal-img" style="width: 35%;"/>
+                </div>
+            </div>
+
+
+            <div class="step-box">
+                <span class="step-number">4</span>
+                <p><strong>Dizinine geç:</strong><br/><code>cd proje-adi</code></p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-number">5</span>
+                <p><strong>Projeyi başlat:</strong><br/><code>npm install && npm run dev</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        📦 Kurulumdan sonra `src/pages/`, `src/components/` gibi klasörler oluşur.<br/>
+        Bungalovun odaları hazır, sıra iç tasarımda!
+    </div>
+
+    <div class="section">
+        <h2>🚪 Neden HTML-CSS-JS ile Başlamayabilirsin?</h2>
+        <p>Yıllardır hep şu cümleyle başlandı: <em>“Önce HTML öğren, sonra CSS, sonra JavaScript...”</em><br/>
+        Ama artık bu sıralama değişti. Çünkü modern framework’ler (örneğin Astro), seni baştan yönlendiriyor. Sayfanın iskeletini veriyor, yol haritasını çıkarıyor. Senin tek yapman gereken: “Bu yapı neden böyle?” sorusunu sormak.</p>
+
+        <div class="highlight-box">
+            💬 Astro gibi bir framework ile başlarsan:<br/>
+            ✔ Neyi nerede yapacağını sana gösterir<br/>
+            ✔ Sayfa yapısı bellidir<br/>
+            ✔ UI parçalarını AI araçlarıyla (örneğin ChatGPT) kolayca üretebilirsin<br/>
+            ✔ Sen sadece mimariyi kavra, gerisini zamanla doldur
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🧱 Framework’ten Sonra Ne Öğrenmeliyim?</h2>
+        <p>Framework kullanmayı öğrenmek yetmez. Asıl büyü, mimariyi kurabilmekte.<br/>
+        Yani "bu projeyi nasıl organize etmeliyim?", "hangi dosyada ne olmalı?" gibi sorular.</p>
+
+        <p><strong>Framework’ten sonraki adım:</strong><br/>
+        🧩 O framework’ün desteklediği mimariyi öğrenmek.<br/>
+        Eğer framework esnekse (örneğin Astro, React gibi), kendi mimarini sen belirlersin.</p>
+
+        <div class="highlight-box">
+            👣 Yeniysen:<br/>
+            – Feature-based klasör yapısı<br/>
+            – Atomic design<br/>
+            – MVC gibi <em>en basit mimarilerden</em> başlayabilirsin.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🧠 Astro'nun Felsefesi: Özgürlükçü ama Rehber</h2>
+        <p>Her framework'ün bir karakteri vardır.<br/>Kimi seni sıkar, kurallar koyar (örneğin Angular).<br/>Kimi seni tamamen özgür bırakır, her şeyi sen çözmek zorunda kalırsın (örneğin React).</p>
+
+        <p><strong>Peki Astro nerede duruyor?</strong><br/>
+        Astro, sana rehberlik eder ama baskı kurmaz. Sayfa yapısı, routing, bileşen yönetimi gibi konularda temel bir çatı sunar. Ama neyi nasıl organize edeceğin sana kalmış.</p>
+
+        <div class="highlight-box">
+        🌀 Astro, “katı yapı” yerine <em>“yönlendirici yapı”</em>benimser:<br/>
+        ✔ Dosya adlarıyla sayfa yönlendirmesini otomatik kurar<br/>
+        ✔ Nerede neyi yapacağını tahmin edebilirsin<br/>
+        ✔ Ama kendi klasör yapını seçmekte özgürsün
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🏗️ Astro'da Mimari Kurmak</h2>
+        <p>Astro sana bir bungalovun iskeletini verir: Odalar hazır, kapılar yerinde, ışık içeri giriyor.<br/>
+        Ama bu evin içini nasıl döşeyeceğin tamamen sana kalmış.</p>
+
+        <p>🪑 “Tüm eşyaları tek odada mı toplayacaksın?”<br/>
+        🚪 “Her odayı kendi işlevine göre mi ayıracaksın?”<br/>
+        📦 “Yoksa modüler dolap sistemleri mi kuracaksın?”</p>
+
+        <p>İşte bu noktada yazılımdaki asıl beceri başlar: <strong>mimari sistem kurma sanatı.</strong><br/>
+        Astro seni sırtlayıp taşımaz. Sana yürünecek patikayı gösterir, ama adımları sen atarsın.</p>
+
+        <div class="highlight-box">
+            ✨ Astro felsefesi: "Ben sana yol gösteririm, ama yolu sen inşa edersin." der
+        </div>
+    </div>
+
+
+
+  </section>
+
+ 
+
+
+</Layout>
