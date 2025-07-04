@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+    .temel-wrapper {
+      background: #f0faff;
+      padding: 3rem 1.5rem;
+      font-family: 'Fira Mono', monospace;
+      color: #333;
+    }
+
+    .intro-box {
+      background: #e0f7ff;
+      border-left: 8px solid #f254c3;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+    }
+
+    .intro-box h1 {
+      font-size: 2.3rem;
+      color: #f254c3;
+      margin-bottom: 0.5rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      color: #0000aa;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .highlight-box {
+      background: #fff3c0;
+      border-left: 6px solid #ffb800;
+      padding: 1rem 1.2rem;
+      border-radius: 0.7rem;
+      font-size: 0.95rem;
+      color: #7a5600;
+      margin-top: 1.2rem;
+    }
+
+    .temel-img {
+      max-width: 100%;
+      margin: 1rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.06);
+    }
+
+    @media (max-width: 640px) {
+      .intro-box h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+  <section class="temel-wrapper">
+    <div class="intro-box">
+      <h1>HTML - CSS - JS = Bir Yazılımcının İlk Çadırı</h1>
+      <p>Yazılıma yeni başlıyorsan, önce bir çadır kurmayı öğrenmelisin.<br/>Ev değil, villa değil. Ama seni doğaya karşı korur. Seni barındırır.<br/>HTML, CSS ve JavaScript tam da bu işi yapar: Temel, sade, geçici ama güçlü.</p>
+    </div>
+
+    <div class="section">
+      <h2>📐 HTML = Çadır Direkleri</h2>
+      <p>HTML, bir sayfanın iskeletidir. Tıpkı çadırın dik durmasını sağlayan direkler gibi. Ne kadar süslersen süsle, direkler olmadan o yapı ayakta duramaz.</p>
+      <div class="highlight-box">HTML olmadan web sayfası olmaz.<br/>Başlık, paragraf, resim, liste, buton… Hepsi HTML ile kurulur.</div>
+    </div>
+
+    <div class="section">
+      <h2>🎨 CSS = Çadırın Brandası</h2>
+      <p>Görüntü, tarz, renk, biçim... Bunların hepsi CSS ile gelir. Çadırın rengi mi? Fermuar çizgileri mi? Güneşi yansıtan dış katman mı? İşte o CSS’tir.</p>
+      <div class="highlight-box">CSS sayesinde aynı HTML yapısı bambaşka görünebilir.<br/>Aynı çadırı istersen kamuflaj yap, istersen neon ışıklı.</div>
+    </div>
+
+    <div class="section">
+      <h2>⚙️ JS = Fermuarlar ve Pencereler</h2>
+      <p>JavaScript, çadırı sadece “görüntü” olmaktan çıkarır. Onu etkileşimli hale getirir. Fermuarları açarsın, pencereler açılır, rüzgar girince perdeyi oynatır.</p>
+      <div class="highlight-box">JS, kullanıcı ile sayfa arasında bağ kurar. Tıklama, kaydırma, form gönderme gibi etkileşimleri JS yönetir.</div>
+    </div>
+
+    <div class="section">
+        <h2>⛺ Neden Çadır?</h2>
+        <p>Çünkü HTML, CSS ve JS birer geçici yapı değildir — ama başlangıçta sana yeterlidir. Hafif, taşınabilir, hızlı kurulan bir yapıdır. Ve en önemlisi: Sana alan tanır, anlam tanır.</p>
+        <img src="/images/htmlcssjs-cadir.png" alt="HTML CSS JS - Çadır" class="temel-img" />
+    </div>
+    <div class="section">
+        <h2>🎯 HTML - CSS - JS Öğrenmeyeceksin Demiyorum...</h2>
+        <p>...ama **neden öğrendiğini bilerek** öğreneceksin.</p>
+
+        <p>Astro gibi bir framework içinde mimari kurarken, yani <strong>bungalovun içini tasarlarken</strong> ara sıra bahçeye çıkacağız.<br/>
+        İşte orada, o sakin bahçede <strong>çadırı yeniden kuracağız</strong> — çünkü bazı şeyleri sade hâliyle kavraman gerekir.</p>
+
+        <div class="highlight-box">
+        🎒 Ben sana HTML, CSS ve JS'yi öğretmeyeceğim...<br/>
+        💡 Onları **nerede**, **neden** ve **ne zaman** kullanacağını öğreteceğim.<br/>
+        Ve bunu bungalovun bahçesinde, o eski çadırı birlikte açarak yapacağız.
+        </div>
+    </div>
+
+  </section>
+</Layout>
