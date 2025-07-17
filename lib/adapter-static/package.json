@@ -1,0 +1,8 @@
+{
+  "name": "@astrojs/adapter-static",
+  "version": "5.0.0-manual",
+  "type": "module",
+  "exports": {
+    "./index.js": "./index.js"
+  }
+}

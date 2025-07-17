@@ -13,7 +13,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       min-height: 100vh;
-      padding: clamp(1rem, 5vw, 2rem); /* Responsive padding */
+      padding: clamp(1rem, 5vw, 2rem);
       color: white;
       font-family: 'Fredoka', sans-serif;
     }
@@ -22,8 +22,8 @@
       background: #ff4ed8;
       color: yellow;
       font-weight: bold;
-      font-size: clamp(1.2rem, 4vw, 1.6rem); /* Responsive font size */
-      padding: 0.5rem clamp(1rem, 3vw, 1.5rem); /* Responsive padding */
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      padding: 0.5rem clamp(1rem, 3vw, 1.5rem);
       border-radius: 2rem;
       display: inline-block;
       transform: rotate(-5deg);
@@ -115,7 +115,6 @@
       color: #ffffff;
     }
 
-    /* Mobile adjustments */
     @media (max-width: 767px) {
       .ladder-container {
         flex-direction: column;
@@ -131,7 +130,6 @@
       }
     }
 
-    /* Tablet adjustments */
     @media (min-width: 768px) and (max-width: 1023px) {
       .ladder-container {
         flex-wrap: wrap;
@@ -142,7 +140,6 @@
       }
     }
 
-    /* Hover effects for larger screens */
     @media (hover: hover) and (pointer: fine) {
       .step:hover, .step2:hover {
         transform: translateY(-3px);
@@ -197,6 +194,67 @@
       </div>
       
       <img src="public/images/flutter-kurabiye-kalibi-metaforu.png" alt="Flutter kurabiye kalıbı metaforu" />
+    </div>
+      
+
+    <div class="content">
+      <p><strong> Flutter’ın Felsefesi ve Mimari Yaklaşımlar</strong></p>
+      <p>Flutter her şeyi widget olarak tanımlar. Ama bu "her şey widget" yaklaşımı, aslında bir mimariyi dayatmaz. Flutter seni özgür bırakır. Senin düşünme biçine göre mimarini seçmeni ister. Tıpkı boş bir prefabrik arsa gibi: nasıl döşeyeceğin, hangi odaları nereye koyacağın sana kalmış.</p>
+
+      <p><strong>Peki hiç bilmeyen biri için hangi mimariyle başlanmalı?</strong></p>
+      <p><mark><strong>1. Basit Mimari (Temiz Kod Temelli):</strong></mark> Stateless ve Stateful widget'lar arasında ayrımı net yaparak, her ekranı tek bir dosyada tutup, küçük küçük bileşenlere ayırarak başlanabilir. Kodlar az, mantık sade.</p>
+
+      <p><mark><strong>2. Feature-based Mimari:</strong></mark> Özellikle projesi büyüyecek olanlar için idealdir. Dosyaları özelliklere göre ayırır: kullanıcı, ürün, yorum gibi. Her özelliğin kendi içinde pages, widgets, models gibi alt klasörleri olur. Anlamlı, sürdürülebilir, modüler.</p>
+
+      <p>Flutter sana bir şey dayatmaz, ama iyi düşünmeni ister. Çünkü bu widget’lardan oluşan ev, nasıl organize edilirse o kadar güçlü ve yönetilebilir olur.</p>
+
+      <p>Yani, Flutter'ın felsefesi şu: “Kuralları sen koy, ama düzenli koy.”</p>
+    </div>
+
+     <div class="header-pill">Flutter SDK Kutu Açılımı:</div>
+
+    <div class="tech-badge">
+      🍽️ Adım Adım Kurulum
+    </div>
+
+    <div class="content">
+      Flutter maceramız başlıyor. Önce gidip SDK’mızı indiriyoruz:<br/>
+      🔗 <a href="https://flutter.dev" target="_blank">flutter.dev</a><br/><br/>
+      Bu SDK, bize temel parçaları getiriyor. Tıpkı bir yemek için malzeme almak gibi.<br/>
+      Ardından tarif defterimiz olan IDE’mizi indiriyoruz: Android Studio.<br/>
+      <ul>
+        <li>🧑‍🍳 <strong>Mac kullanıcıları</strong> ayrıca Xcode da indiriyor.</li>
+        <li>🪟 <strong>Windows kullanıcıları</strong> bu adımı atlayabilir, direkt yemeğe (proje kurmaya) geçebilir 😄</li>
+      </ul>
+      Android Studio üzerinden yeni Flutter projemizi açıyoruz ve kutu açılımına hazır hale geliyoruz!
+    </div>
+
+    <div class="tech-badge">
+      📦 flutter create benim_projem
+    </div>
+
+    <div class="content">
+      Flutter SDK’yı kurdun, şimdi IKEA kutusunu açar gibi bir Flutter projesi oluşturuyorsun.<br/>
+      <code>flutter create benim_projem</code> komutunu yazdığında, kutudan bazı temel parçalar çıkar.<br/><br/>
+      Ama bunlar sadece dosya değil, her biri Flutter evinin içindeki görevli gibi çalışır.
+    </div>
+
+    <div class="ladder-container">
+      <img src="/images/flutter-kutu-acilimi.png" alt="Flutter kutu içeriği" />
+      <div class="ladder">
+        <div class="step">1. <code>main.dart</code>: Kurulum Kılavuzu 📘 – Uygulamanın başladığı yer. Tıpkı 'önce A parçasını B’ye takın' diyen ilk sayfa gibi.</div>
+        <div class="step">2. <code>pubspec.yaml</code>: Garanti Belgesi & İçindekiler 📋 – Projende hangi parçalar (kütüphaneler) var, burada yazıyor.</div>
+        <div class="step">3. <code>lib/</code> klasörü: Kurulumu yapacağın alan 🛠️ – Asıl kodlar burada yazılır.</div>
+        <div class="step">4. <code>test/</code> klasörü: Kurulum sonrası kontrol listesi ✅ – Her şey doğru mu, test burada yapılır.</div>
+        <div class="step">5. <code>.dart_tool/</code>, <code>.idea/</code>, <code>build/</code>: Görünmeyen ama gerekli teknik belgeler 📦 – Arkada çalışır, kullanıcıya görünmez ama sistem için şarttır.</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>Flutter, sadece bir framework değil; seni düşünen bir mimar gibi, kurulumla birlikte hazır bir yapı da sunar.</p>
+      <p>Ve işte bu yapı, kurulduktan sonra çalıştırılır: <code>flutter run</code>.</p>
+      <p>O an, Flutter ilk nefesini alır… Ve ekran karşına çıkar: “Flutter Demo Home Page”</p>
+      <p>Sonraki bölümde, artık bu yapının anatomisini inceleyeceğiz. Yani widget’ların görevlerini, kim ne işe yarıyor sorularını cevaplayacağız.</p>
     </div>
   </section>
 </Layout>
